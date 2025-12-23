@@ -82,8 +82,8 @@ int main(int argc, char **argv) {
     char enc_filename[300];
     char dec_filename[300];
 
-    printf("Enter filename to encrypt: ");
-    if (scanf("%255s", filename) != 1) return 1;
+    // Hardcoded input file as requested
+    strcpy(filename, "test.bin");
 
     // 1. Encryption
     // Construct output name: <file>_encrypted
