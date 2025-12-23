@@ -4,11 +4,12 @@ CC = aarch64-linux-gnu-gcc
 AS = aarch64-linux-gnu-as
 
 # Output binary name
-TARGET = myapp_arm
+TARGET = hill_cipher
+SRC = src/
 
 # Source files
-SRCS = main.c
-ASM = hill_neon.S
+SRCS = $(SRC)main.c
+ASM = $(SRC)hill_neon.S
 
 # Build rules
 all: $(TARGET)
@@ -18,3 +19,7 @@ $(TARGET): $(SRCS) $(ASM)
 
 clean:
 	rm -f $(TARGET) *_encrypted *_decrypted.bin
+run:
+	qemu-aarch64 $(TARGET)
+test:
+	./$(SRC)test.sh
