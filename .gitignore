@@ -1,4 +1,5 @@
 *.o
 hill_cipher
+hill_cipher_only_c
 .vscode/
 *bin*
